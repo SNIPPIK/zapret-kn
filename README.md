@@ -5,7 +5,9 @@
 
 Рабочие аргументы на текущий момент
 ```css
+MODE_QUIC=0
 NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-ttl=0 --dpi-desync-repeats=7 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
+NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-repeats=7 --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new"
 ```
 
 
