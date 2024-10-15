@@ -18,7 +18,7 @@ MODE_QUIC=1
 
 NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-ttl=7 --dpi-desync-ttl6=0 --dpi-desync-repeats=20 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
 
-NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-any-protocol --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new --dpi-desync=fake --dpi-desync-repeats=15
+NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-any-protocol --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new --dpi-desync=fake --dpi-desync-repeats=15"
 ```
 
 
