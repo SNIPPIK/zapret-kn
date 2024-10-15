@@ -10,6 +10,17 @@ NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-des
 NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-repeats=7 --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new"
 ```
 
+```css
+Отличный конфиг, но он отвалил мне войс в дискорде. Я сделал вот так и получил все! Ютуб на всех девайсах дома, комп, телек, iphone, samsung и дискорд в браузере chrome с флагом --enable-quic --quic-version=h3-27 и в приложении на мобиле.
+
+QUIC_PORTS=443,50000-65535
+MODE_QUIC=1
+
+NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-ttl=7 --dpi-desync-ttl6=0 --dpi-desync-repeats=20 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
+
+NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-any-protocol --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new --dpi-desync=fake --dpi-desync-repeats=15
+```
+
 
 ### ИНСТРУКЦИЯ НЕ ПОД "СКОПИРОВАЛ ВСТАВИЛ", НАДО ХОТЬ ЧУТЬ ВНИКАТЬ !!!
 У меня keenetic extra 2. У него автоматом не грузились некоторые модули ядра.
