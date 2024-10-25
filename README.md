@@ -1,6 +1,7 @@
 # bypass-keenetic
-- Обход блокировки в рашке
+- Обход блокировки (youtube, discord)
 - Перезапуск `/opt/zapret/init.d/sysv/zapret restart`
+- Для начала работы надо установить zapret на keenetic
 
 Рабочие аргументы на текущий момент
 - 1 Вариант
