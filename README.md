@@ -2,20 +2,8 @@
 - Обход блокировки (youtube, discord)
 - Перезапуск `/opt/zapret/init.d/sysv/zapret restart`
 - Для начала работы надо установить zapret на keenetic
-
-Рабочие аргументы на текущий момент
-- 1 Вариант
-```css
-MODE_QUIC=0
-NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-ttl=0 --dpi-desync-repeats=7 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
-NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-split-seqovl=1 --dpi-desync-repeats=7 --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new"
-```
-- 2 Вариант
-```css
-MODE_QUIC=1
-NFQWS_OPT_DESYNC="--dpi-desync=fake,split2 --dpi-desync-ttl=7 --dpi-desync-ttl6=0 --dpi-desync-repeats=20 --dpi-desync-fooling=md5sig,badseq --dpi-desync-fake-tls=/opt/zapret/files/fake/tls_clienthello_www_google_com.bin"
-NFQWS_OPT_DESYNC_QUIC="--dpi-desync=fake,split2 --dpi-desync-any-protocol --dpi-desync-fake-quic=/opt/zapret/files/fake/quic_initial_www_google_com.bin --new --dpi-desync=fake --dpi-desync-repeats=15"
-```
+- Все готово и настроено бери и пользуйся
+- Необходим OPKG!!!
 
 ### Не забываем добавить в автозапуск
 ```
@@ -23,6 +11,8 @@ ln -s /opt/zapret/init.d/sysv/custom.d.exemples/50-discord /opt/etc/init.d/S50-d
 ln -s /opt/zapret/init.d/sysv/zapret /opt/etc/init.d/S90-zapret
 ```
 
+### Для Discord voice
+- Уже включен в `zapret 68.zip`
 - Добавьте в init.d/sysv/functions:
 ```
 # Fix local source ip issue when quic packets were sent with raw sockets (no Keenetic-specific iptable marks were applied)
