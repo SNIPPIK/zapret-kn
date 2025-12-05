@@ -11,6 +11,15 @@ ln -s /opt/zapret/init.d/sysv/custom.d.exemples/50-discord /opt/etc/init.d/S50-d
 ln -s /opt/zapret/init.d/sysv/zapret /opt/etc/init.d/S90-zapret
 ```
 
+- netfilter
+`nano /opt/etc/ndm/netfilter.d/000-zapret.sh`
+```
+#!/bin/sh
+[ "$table" != "mangle" ] && [ "$table" != "nat" ] && exit 0
+/opt/zapret/init.d/sysv/zapret restart-fw
+exit 0
+```
+
 ### Для Discord voice
 - Уже включен в `zapret 68.zip`
 - Добавьте в init.d/sysv/functions:
