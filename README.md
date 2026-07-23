@@ -11,8 +11,34 @@ ln -s /opt/zapret/init.d/sysv/custom.d.exemples/50-discord /opt/etc/init.d/S50-d
 ln -s /opt/zapret/init.d/sysv/zapret /opt/etc/init.d/S90-zapret
 ```
 
+`nano /opt/etc/init.d/S00fix`
+`chmod +x /opt/etc/init.d/S00fix`
+```
+#!/bin/sh
+start() {
+    sysctl -w net.netfilter.nf_conntrack_checksum=0 &> /dev/null
+}
+stop() {
+    sysctl -w net.netfilter.nf_conntrack_checksum=1 &> /dev/null
+}
+case "$1" in
+    'start')
+        start
+        ;;
+    'stop')
+        stop
+        ;;
+    *)
+        stop
+        start
+        ;;
+esac
+exit 0
+```
+
 - netfilter
 `nano /opt/etc/ndm/netfilter.d/000-zapret.sh`
+`chmod +x /opt/etc/ndm/netfilter.d/000-zapret.sh`
 ```
 #!/bin/sh
 [ "$table" != "mangle" ] && [ "$table" != "nat" ] && exit 0
