@@ -131,7 +131,7 @@ chmod +x /opt/etc/init.d/S00fix
 
 mkdir -p /opt/etc/ndm/netfilter.d
 
-cat >/opt/etc/ndm/netfilter.d/000-zapret.sh <<'EOF'
+cat >/opt/etc/ndm/netfilter.d/000-zapret2.sh <<'EOF'
 #!/bin/sh
 
 [ "$table" != "mangle" ] && [ "$table" != "nat" ] && exit 0
@@ -141,7 +141,7 @@ cat >/opt/etc/ndm/netfilter.d/000-zapret.sh <<'EOF'
 exit 0
 EOF
 
-chmod +x /opt/etc/ndm/netfilter.d/000-zapret.sh
+chmod +x /opt/etc/ndm/netfilter.d/000-zapret2.sh
 
 #
 # Запуск
