@@ -53,7 +53,6 @@ echo "[2/7] Получение последней версии..."
 URL=$(
 curl -fsSL https://api.github.com/repos/bol-van/zapret2/releases/latest \
 | grep browser_download_url \
-| grep linux \
 | grep tar.gz \
 | head -n1 \
 | cut -d '"' -f4
